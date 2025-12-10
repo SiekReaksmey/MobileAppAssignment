@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MymobileAppAssignment">
         <activity
+            android:name=".ColdCofeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".card"
+            android:exported="false" />
+        <activity
+            android:name=".addTocardView"
+            android:exported="false" />
+        <activity
+            android:name=".testCold"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

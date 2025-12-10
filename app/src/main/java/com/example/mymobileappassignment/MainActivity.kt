@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         }
         // Load default fragment on startup
         replaceFragment(HomeFragment())
-
         // Bottom Navigation Listener
         binding.btnNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {

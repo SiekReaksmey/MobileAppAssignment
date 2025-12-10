@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import kotlin.contracts.contract
 
@@ -36,31 +38,53 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_menu, container, false)
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
-
         val btnHot = view.findViewById<Button>(R.id.btnHot)
+        val btnCold = view.findViewById<Button>(R.id.btnCold)
+        val love = inflater.inflate(R.layout.fragment_cold_cafee, container, false).findViewById<ImageView>(R.id.loveCapuchino)
+        var btnMatcha = view.findViewById<Button>(R.id.btnMacha)
+        btnMatcha.setOnClickListener {
+            childFragmentManager.beginTransaction()
+                .replace(R.id.fram_Menu, MatchaFragment())
+                .addToBackStack(null)
+                .commit()
+            btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
+            btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
+            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.brown)
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.white))
+        }
         btnHot.setOnClickListener {
             // Replace FrameLayout with HotCoffeeFragment
             childFragmentManager.beginTransaction()
                 .replace(R.id.fram_Menu, HotCafee())
+                .addToBackStack(null)
                 .commit()
+
             // Change button color correctly
             btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.brown)
             btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
+            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.brown))
         }
-        btnHot.setOnClickListener {
+        btnCold.setOnClickListener {
             childFragmentManager.beginTransaction()
-                .replace(R.id.fram_Menu, HotCafee())
+                .replace(R.id.fram_Menu, coldFragment())
                 .addToBackStack(null)
                 .commit()
+            btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
+            btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.brown)
+            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.brown))
         }
-
-
+        btnCold.performClick()
         return view
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of

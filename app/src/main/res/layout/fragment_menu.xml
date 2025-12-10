@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".MenuFragment"
     android:orientation="vertical"
-    android:background="@color/milke">
+    android:background="@color/milke"
+    android:id="@+id/parentFrame">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -66,10 +67,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:backgroundTint="@color/brown"
+                    android:backgroundTint="@color/white"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/brown"
                     android:background="@drawable/border_search"
 
                     android:text="Cold Coffee" />
@@ -92,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:backgroundTint="@color/white"
-                    android:text="Macha"
+                    android:text="Matcha"
                     android:textColor="@color/brown"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
@@ -126,6 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/horizontalScrollView">
+
         </FrameLayout>
     </RelativeLayout>
 </FrameLayout>
