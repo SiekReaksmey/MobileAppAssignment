@@ -67,4 +67,34 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.frameLayout, fragment)
             .commit()
     }
+
+    // Public function to navigate to product detail (called from child fragments)
+    fun navigateToProductDetail(name: String, price: String, imageResId: Int) {
+        val fragment = AddToCardFragment.newInstance(name, price).apply {
+            arguments?.putInt("IMAGE_RES_ID", imageResId)
+            arguments?.putBoolean("IS_EDIT_MODE", false)
+        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    // Navigate to product detail for editing existing cart item
+    fun navigateToProductDetailForEdit(name: String, price: String, imageResId: Int, currentQuantity: Int) {
+        val fragment = AddToCardFragment.newInstance(name, price).apply {
+            arguments?.putInt("IMAGE_RES_ID", imageResId)
+            arguments?.putBoolean("IS_EDIT_MODE", true)
+            arguments?.putInt("CURRENT_QUANTITY", currentQuantity)
+        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    // Navigate to cart fragment
+    fun navigateToCart() {
+        replaceFragment(CartFragment())
+    }
 }

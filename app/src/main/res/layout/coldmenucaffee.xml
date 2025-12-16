@@ -25,6 +25,7 @@
             android:gravity="center">
 
             <LinearLayout
+                android:id="@+id/btnHotCafee1Cappuccino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -41,12 +42,15 @@
                         android:src="@drawable/img_1"
                         android:background="@drawable/borderimage"/>
                     <ImageView
+                        android:id="@+id/loveHot1"
                         android:layout_below="@+id/img1"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/love"
                         android:layout_marginLeft="115dp"
-                        android:layout_marginTop="-25dp"/>
+                        android:layout_marginTop="-25dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
                     <TextView
                         android:id="@+id/txtCofee1name"
                         android:layout_width="wrap_content"
@@ -79,6 +83,7 @@
                 </RelativeLayout>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnHotCafee2Espresso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -94,12 +99,15 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_2" />
                     <ImageView
+                        android:id="@+id/loveHot2"
                         android:layout_below="@+id/img2"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/love"
                         android:layout_marginLeft="115dp"
-                        android:layout_marginTop="-25dp"/>
+                        android:layout_marginTop="-25dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
                     <TextView
                         android:id="@+id/txtCofee2name"
                         android:layout_width="wrap_content"
@@ -132,6 +140,7 @@
                 </RelativeLayout>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnHotCafee3Americano"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -147,12 +156,15 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_3" />
                     <ImageView
+                        android:id="@+id/loveHot3"
                         android:layout_below="@+id/img3"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/love"
                         android:layout_marginLeft="115dp"
-                        android:layout_marginTop="-25dp"/>
+                        android:layout_marginTop="-25dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
                     <TextView
                         android:id="@+id/txtCofee3name"
                         android:layout_width="wrap_content"
@@ -185,6 +197,7 @@
                 </RelativeLayout>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/btnHotCafee4Macchiato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -200,12 +213,15 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_4" />
                     <ImageView
+                        android:id="@+id/loveHot4"
                         android:layout_below="@+id/img4"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:src="@drawable/love"
                         android:layout_marginLeft="120dp"
-                        android:layout_marginTop="-25dp"/>
+                        android:layout_marginTop="-25dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
                     <TextView
                         android:id="@+id/txtCofee4name"
                         android:layout_width="wrap_content"

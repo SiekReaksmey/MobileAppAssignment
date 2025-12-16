@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,48 @@ class HotCafee : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.coldmenucaffee, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Set up click listeners for all hot coffee cards
+        val btnCappuccino = view.findViewById<LinearLayout>(R.id.btnHotCafee1Cappuccino)
+        val btnEspresso = view.findViewById<LinearLayout>(R.id.btnHotCafee2Espresso)
+        val btnAmericano = view.findViewById<LinearLayout>(R.id.btnHotCafee3Americano)
+        val btnMacchiato = view.findViewById<LinearLayout>(R.id.btnHotCafee4Macchiato)
+
+        // Prevent favorite buttons from triggering card clicks
+        val loveHot1 = view.findViewById<ImageView>(R.id.loveHot1)
+        val loveHot2 = view.findViewById<ImageView>(R.id.loveHot2)
+        val loveHot3 = view.findViewById<ImageView>(R.id.loveHot3)
+        val loveHot4 = view.findViewById<ImageView>(R.id.loveHot4)
+
+        loveHot1?.setOnClickListener { it?.isClickable = true }
+        loveHot2?.setOnClickListener { it?.isClickable = true }
+        loveHot3?.setOnClickListener { it?.isClickable = true }
+        loveHot4?.setOnClickListener { it?.isClickable = true }
+
+        btnCappuccino?.setOnClickListener {
+            openProductDetail("Cappuccino", "1.5", R.drawable.img_1)
+        }
+
+        btnEspresso?.setOnClickListener {
+            openProductDetail("Espresso", "2.5", R.drawable.img_2)
+        }
+
+        btnAmericano?.setOnClickListener {
+            openProductDetail("Americano", "3.5", R.drawable.img_3)
+        }
+
+        btnMacchiato?.setOnClickListener {
+            openProductDetail("Macchiato", "3.5", R.drawable.img_4)
+        }
+    }
+
+    private fun openProductDetail(name: String, price: String, imageRes: Int) {
+        val mainActivity = requireActivity() as? MainActivity
+        mainActivity?.navigateToProductDetail(name, price, imageRes)
     }
 
     companion object {
