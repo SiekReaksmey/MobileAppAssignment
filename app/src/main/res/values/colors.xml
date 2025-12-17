@@ -5,5 +5,20 @@
     <color name="brown">#3e2522</color>
     <color name="cefee">#8c6e63</color>
     <color name="lightYelow">#d3a376</color>
+    <color name="darkBlue">#3F4F7F</color>
     <color name="milke">#ffe0b2</color>
+    <color name="purple_500">#673AB7</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- Category Colors -->
+    <color name="coffee_color">#795548</color>
+    <color name="tea_color">#00BCD4</color>
+    <color name="smoothie_color">#F44336</color>
+    <color name="juice_color">#FF9800</color>
+
+    <!-- Theme Colors -->
+    <color name="blue_500">#2196F3</color>
+    <color name="red_500">#F44336</color>
+    <color name="green_500">#4CAF50</color>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.mymobileappassignment
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,76 +26,60 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // Load default fragment on startup
-        replaceFragment(HomeFragment())
+
+        hideBottomNav()
+        replaceFragment(LandingFragment())
+
         // Bottom Navigation Listener
         binding.btnNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
                 R.id.btnHome -> {
+                    showBottomNav()
                     replaceFragment(HomeFragment())
                     true
                 }
 
                 R.id.btnMenu -> {
+                    showBottomNav()
                     replaceFragment(MenuFragment())
                     true
                 }
 
                 R.id.btnUserProfile -> {
+                    showBottomNav()
                     replaceFragment(ProfileFragment())
                     true
                 }
 
                 R.id.btnCart -> {
+                    showBottomNav()
                     replaceFragment(CartFragment())
                     true
                 }
+
                 R.id.btnLove -> {
+                    showBottomNav()
                     replaceFragment(FavoriteFragment())
                     true
                 }
-
 
                 else -> false
             }
         }
     }
 
-    // Function to replace fragments
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.frameLayout, fragment)
             .commit()
     }
 
-    // Public function to navigate to product detail (called from child fragments)
-    fun navigateToProductDetail(name: String, price: String, imageResId: Int) {
-        val fragment = AddToCardFragment.newInstance(name, price).apply {
-            arguments?.putInt("IMAGE_RES_ID", imageResId)
-            arguments?.putBoolean("IS_EDIT_MODE", false)
-        }
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frameLayout, fragment)
-            .addToBackStack(null)
-            .commit()
+    fun showBottomNav() {
+        binding.btnNavigation.visibility = View.VISIBLE
     }
 
-    // Navigate to product detail for editing existing cart item
-    fun navigateToProductDetailForEdit(name: String, price: String, imageResId: Int, currentQuantity: Int) {
-        val fragment = AddToCardFragment.newInstance(name, price).apply {
-            arguments?.putInt("IMAGE_RES_ID", imageResId)
-            arguments?.putBoolean("IS_EDIT_MODE", true)
-            arguments?.putInt("CURRENT_QUANTITY", currentQuantity)
-        }
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frameLayout, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    // Navigate to cart fragment
-    fun navigateToCart() {
-        replaceFragment(CartFragment())
+    fun hideBottomNav() {
+        binding.btnNavigation.visibility = View.GONE
     }
 }

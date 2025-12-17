@@ -19,11 +19,17 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btnNavigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/lightYelow"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/buttonnavmenu"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/buttonnavmenu"
+        app:itemIconTint="@color/bottom_nav_selector"
+        app:itemTextColor="@color/bottom_nav_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@null"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
