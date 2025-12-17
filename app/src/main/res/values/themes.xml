@@ -3,5 +3,10 @@
     <style name="Theme.MyMobileAppAssignment"
         parent="Theme.Material3.DayNight.NoActionBar">
     </style>
+    <style name="App.CustomIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#F2F2F2</item>
+        <item name="android:width">56dp</item>  <item name="android:height">38dp</item>
+        <item name="marginHorizontal">0dp</item>
+    </style>
 
 </resources>

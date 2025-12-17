@@ -49,11 +49,11 @@ class MenuFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
             btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
-            btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.darkBlue))
             btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
-            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.darkBlue))
             btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.brown)
-            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.white))
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
         }
         btnHot.setOnClickListener {
             // Replace FrameLayout with HotCoffeeFragment
@@ -63,12 +63,12 @@ class MenuFragment : Fragment() {
                 .commit()
 
             // Change button color correctly
-            btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.brown)
+            btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.darkBlue)
             btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
-            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
+            btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.darkBlue))
             btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
-            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.brown))
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
         }
         btnCold.setOnClickListener {
             childFragmentManager.beginTransaction()
@@ -76,11 +76,11 @@ class MenuFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
             btnHot.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
-            btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.brown))
-            btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.brown)
+            btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.darkBlue))
+            btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.darkBlue)
             btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
-            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.brown))
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
         }
         btnCold.performClick()
         return view

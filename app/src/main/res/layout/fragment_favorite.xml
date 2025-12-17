@@ -30,7 +30,6 @@
             android:layout_marginBottom="14dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp"
-            app:cardUseCompatPadding="true"
             android:foreground="?attr/selectableItemBackground">
 
             <LinearLayout
