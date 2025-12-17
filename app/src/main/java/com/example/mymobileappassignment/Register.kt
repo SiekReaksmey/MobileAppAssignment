@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
@@ -15,14 +14,38 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
+ * Use the [Register.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ProfileFragment : Fragment(R.layout.fragment_profile) {
+class Register : Fragment(R.layout.fragment_register) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Hide bottom nav
+        (activity as MainActivity).hideBottomNav()
+
+        val txtBack = view.findViewById<TextView>(R.id.txt_login)
+        val btnRegister = view.findViewById<TextView>(R.id.btn_register)
+
+        txtBack.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.frameLayout, LoginFragment())
+                .commit()
+        }
+        btnRegister.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.frameLayout, HomeFragment())
+                .commit()
+
+            (activity as MainActivity).showBottomNav()
+
+        }
+
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +56,14 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_register, container, false)
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -40,12 +71,12 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
+         * @return A new instance of fragment Register.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
+            Register().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

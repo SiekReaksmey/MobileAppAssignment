@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".MenuFragment"
     android:orientation="vertical"
-    android:background="@color/milke"
     android:id="@+id/parentFrame">
 
     <RelativeLayout
@@ -13,16 +12,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        >
+        android:layout_marginRight="20dp">
         <LinearLayout
             android:id="@+id/layout_First"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="40dp"
             android:paddingBottom="10dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,15 +27,16 @@
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:paddingBottom="10dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <SearchView
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:queryHint="Search items..."
-                android:iconifiedByDefault="false"
                 android:background="@drawable/border_search"
-                />
+                android:iconifiedByDefault="false" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +68,6 @@
                     android:backgroundTint="@color/white"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:textColor="@color/brown"
                     android:background="@drawable/border_search"
 
                     android:text="Cold Coffee" />

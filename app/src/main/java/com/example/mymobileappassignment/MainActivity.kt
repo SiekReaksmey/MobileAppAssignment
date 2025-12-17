@@ -1,6 +1,7 @@
 package com.example.mymobileappassignment
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,46 +26,60 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // Load default fragment on startup
-        replaceFragment(HomeFragment())
+
+        hideBottomNav()
+        replaceFragment(LandingFragment())
+
         // Bottom Navigation Listener
         binding.btnNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
                 R.id.btnHome -> {
+                    showBottomNav()
                     replaceFragment(HomeFragment())
                     true
                 }
 
                 R.id.btnMenu -> {
+                    showBottomNav()
                     replaceFragment(MenuFragment())
                     true
                 }
 
                 R.id.btnUserProfile -> {
+                    showBottomNav()
                     replaceFragment(ProfileFragment())
                     true
                 }
 
                 R.id.btnCart -> {
+                    showBottomNav()
                     replaceFragment(CartFragment())
                     true
                 }
+
                 R.id.btnLove -> {
+                    showBottomNav()
                     replaceFragment(FavoriteFragment())
                     true
                 }
-
 
                 else -> false
             }
         }
     }
 
-    // Function to replace fragments
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.frameLayout, fragment)
             .commit()
+    }
+
+    fun showBottomNav() {
+        binding.btnNavigation.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNav() {
+        binding.btnNavigation.visibility = View.GONE
     }
 }
