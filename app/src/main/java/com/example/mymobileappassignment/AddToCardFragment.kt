@@ -57,6 +57,10 @@ class AddToCardFragment : Fragment() {
         val btnAddToCart = view.findViewById<Button>(R.id.btnAddToCart)
         val imgCoffee = view.findViewById<ImageView>(R.id.imgCoffee)
         
+        // Ensure button is enabled and clickable
+        btnAddToCart?.isEnabled = true
+        btnAddToCart?.isClickable = true
+        
         // Back button functionality
         imgBack?.setOnClickListener {
             parentFragmentManager.popBackStack()
@@ -101,7 +105,7 @@ class AddToCardFragment : Fragment() {
             }
         }
 
-        btnAddToCart.setOnClickListener {
+        btnAddToCart?.setOnClickListener {
             if (isEditMode) {
                 // Update existing item in cart
                 CartManager.updateItemQuantity(name, price, quantity)

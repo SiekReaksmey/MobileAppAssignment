@@ -2,7 +2,6 @@ package com.example.mymobileappassignment
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -81,5 +80,40 @@ class MainActivity : AppCompatActivity() {
 
     fun hideBottomNav() {
         binding.btnNavigation.visibility = View.GONE
+    }
+
+    fun navigateToProductDetail(name: String, price: String, imageRes: Int) {
+        val fragment = AddToCardFragment.newInstance(name, price)
+        val args = fragment.arguments ?: Bundle()
+        args.putInt("IMAGE_RES_ID", imageRes)
+        args.putBoolean("IS_EDIT_MODE", false)
+        fragment.arguments = args
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun navigateToProductDetailForEdit(name: String, price: String, imageResId: Int, quantity: Int) {
+        val fragment = AddToCardFragment.newInstance(name, price)
+        val args = fragment.arguments ?: Bundle()
+        args.putInt("IMAGE_RES_ID", imageResId)
+        args.putBoolean("IS_EDIT_MODE", true)
+        args.putInt("CURRENT_QUANTITY", quantity)
+        fragment.arguments = args
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun navigateToCart() {
+        showBottomNav()
+        replaceFragment(CartFragment())
+        // Set cart icon as selected/active in bottom navigation after fragment is replaced
+        // This ensures the icon appears active when navigating to cart
+        binding.btnNavigation.post {
+            binding.btnNavigation.selectedItemId = R.id.btnCart
+        }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Selected item -->
+    <!-- Selected item - matches menu brown color -->
     <item
-        android:color="#000000"
+        android:color="@color/brown"
         android:state_checked="true"/>
 
     <!-- Unselected items -->

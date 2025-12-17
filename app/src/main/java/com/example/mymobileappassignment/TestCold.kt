@@ -23,7 +23,13 @@ class TestCold : AppCompatActivity() {
             insets
         }
         var intent = intent
-        var listItem = intent.getSerializableExtra("STUDENT", Product::class.java) as Product
+        var listItem: Product? = null
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            listItem = intent.getSerializableExtra("STUDENT", Product::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            listItem = intent.getSerializableExtra("STUDENT") as? Product
+        }
         binding.apply {
             //lblId.text = listItem.id.toString() + " " + listItem.name + " " + listItem.score.toString();
         }

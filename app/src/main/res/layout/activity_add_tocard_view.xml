@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/milke"
     tools:context=".AddToCardFragment">
 
     <!-- Navigation Bar -->
@@ -84,53 +83,54 @@
     <LinearLayout
         android:id="@+id/layoutQuantity"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/border_search"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:paddingHorizontal="10dp"
         app:layout_constraintEnd_toEndOf="@id/txtName"
         app:layout_constraintTop_toBottomOf="@id/txtName">
 
         <TextView
             android:id="@+id/btnMinus"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:gravity="center"
-            android:text="@string/mines"
+            android:text="−"
             android:textColor="@color/brown"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless" />
 
         <TextView
             android:id="@+id/txtQuantity"
-            android:layout_width="56dp"
-            android:layout_height="36dp"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/_1"
             android:textColor="@color/brown"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="8dp" />
 
         <TextView
             android:id="@+id/btnPlus"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:gravity="center"
-            android:text="@string/plus"
+            android:text="+"
             android:textColor="@color/brown"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless" />
 
     </LinearLayout>
+
 
     <!-- Product Description -->
     <TextView
@@ -172,7 +172,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/brown"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/darkBlue"
         android:text="@string/add_to_cart"
         android:textAllCaps="false"
         android:textColor="@color/white"
