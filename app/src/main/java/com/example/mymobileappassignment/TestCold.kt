@@ -1,6 +1,5 @@
 package com.example.mymobileappassignment
 
-import android.os.Binder
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mymobileappassignment.databinding.ActivityTestColdBinding
 
-class testCold : AppCompatActivity() {
+class TestCold : AppCompatActivity() {
     lateinit var binding: ActivityTestColdBinding
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,13 @@ class testCold : AppCompatActivity() {
             insets
         }
         var intent = intent
-        var listItem = intent.getSerializableExtra("STUDENT", product::class.java) as product
+        var listItem: Product? = null
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            listItem = intent.getSerializableExtra("STUDENT", Product::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            listItem = intent.getSerializableExtra("STUDENT") as? Product
+        }
         binding.apply {
             //lblId.text = listItem.id.toString() + " " + listItem.name + " " + listItem.score.toString();
         }

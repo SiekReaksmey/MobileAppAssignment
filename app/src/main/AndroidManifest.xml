@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMobileAppAssignment">
         <activity
-            android:name=".ColdCofeeActivity"
+            android:name=".ColdCoffeeActivity"
             android:exported="false" />
         <activity
             android:name=".CardActivity"
@@ -21,7 +21,7 @@
 <!--            android:name=".AddToCardFragment"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name=".testCold"
+            android:name=".TestCold"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
