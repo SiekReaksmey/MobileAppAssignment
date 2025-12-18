@@ -42,6 +42,8 @@ class MenuFragment : Fragment() {
         val btnCold = view.findViewById<Button>(R.id.btnCold)
         val love = inflater.inflate(R.layout.fragment_cold_cafee, container, false).findViewById<ImageView>(R.id.loveCapuchino)
         var btnMatcha = view.findViewById<Button>(R.id.btnMacha)
+        var btnSmoothies = view.findViewById<Button>(R.id.btn_smoothies)
+        var btnFrappes = view.findViewById<Button>(R.id.btn_frappes)
         btnMatcha.setOnClickListener {
             childFragmentManager.beginTransaction()
                 .replace(R.id.fram_Menu, MatchaFragment())
@@ -51,8 +53,8 @@ class MenuFragment : Fragment() {
             btnHot.setTextColor(ContextCompat.getColor(requireContext(), R.color.darkBlue))
             btnCold.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.white)
             btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.darkBlue))
-            btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.brown)
-            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
+            btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.darkBlue)
+            btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.white))
         }
         btnHot.setOnClickListener {
             // Replace FrameLayout with HotCoffeeFragment
@@ -80,6 +82,10 @@ class MenuFragment : Fragment() {
             btnCold.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             btnMatcha.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
             btnMatcha.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
+            btnSmoothies.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
+            btnSmoothies.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
+            btnFrappes.backgroundTintList = ContextCompat.getColorStateList(requireContext(),R.color.white)
+            btnFrappes.setTextColor(ContextCompat.getColor(requireContext(),R.color.darkBlue))
         }
         btnCold.performClick()
         return view

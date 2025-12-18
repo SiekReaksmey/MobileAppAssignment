@@ -25,7 +25,6 @@ class Register : Fragment(R.layout.fragment_register) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Hide bottom nav
         (activity as MainActivity).hideBottomNav()
 
         val txtBack = view.findViewById<TextView>(R.id.txt_login)

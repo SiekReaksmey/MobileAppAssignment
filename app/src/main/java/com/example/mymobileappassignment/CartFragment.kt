@@ -65,7 +65,7 @@ class CartFragment : Fragment() {
         
         if (cartItems.isEmpty()) {
             txtEmptyCart?.visibility = View.VISIBLE
-            txtTotal?.text = "Total: $0.00"
+            txtTotal?.text = " $0.00"
         } else {
             txtEmptyCart?.visibility = View.GONE
             
@@ -115,7 +115,7 @@ class CartFragment : Fragment() {
                 cartContainer?.addView(itemView)
             }
             
-            txtTotal?.text = String.format("Total: $%.2f", total)
+            txtTotal?.text = String.format(" $%.2f", total)
         }
     }
     

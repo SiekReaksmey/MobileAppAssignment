@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         hideBottomNav()
         replaceFragment(LandingFragment())
 
-        // Bottom Navigation Listener
         binding.btnNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
@@ -110,8 +109,6 @@ class MainActivity : AppCompatActivity() {
     fun navigateToCart() {
         showBottomNav()
         replaceFragment(CartFragment())
-        // Set cart icon as selected/active in bottom navigation after fragment is replaced
-        // This ensures the icon appears active when navigating to cart
         binding.btnNavigation.post {
             binding.btnNavigation.selectedItemId = R.id.btnCart
         }

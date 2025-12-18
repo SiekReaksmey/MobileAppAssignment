@@ -97,6 +97,7 @@
                     android:background="@drawable/border_search"/>
 
                 <Button
+                    android:id="@+id/btn_smoothies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
@@ -108,11 +109,12 @@
                     android:background="@drawable/border_search"/>
 
                 <Button
+                    android:id="@+id/btn_frappes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:backgroundTint="@color/white"
-                    android:text="button 6"
+                    android:text="Frappes"
                     android:textColor="@color/white"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
